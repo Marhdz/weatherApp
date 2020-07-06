@@ -20,7 +20,10 @@ const key = "c17a5d048eea0b6bf0094ceda2925196";
 
 // CHECK IF BROWSER SUPPORTS GEOLOCATION
 if(navigator.geolocation && navigator.geolocation.coords!= undefined){
-    navigator.geolocation.getCurrentPosition(setPosition, showError);
+    getPosition = () => {
+return new Promise(function (setPosition, showError) {
+  navigator.geolocation.getCurrentPosition(setPosition, showError);
+});
 }else{
     notificationElement.style.display = "block";
     notificationElement.innerHTML = "<p>Se está usando la ubicación por defecto</p>";
