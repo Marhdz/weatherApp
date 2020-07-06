@@ -69,6 +69,15 @@ function getWeather(latitude, longitude){
         });
 }
 
+
+//async
+getWeather = async (latitude, longitude) => {
+  const api_call = await
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`);
+  const data = await api_call.json();
+  console.log('data is: ', data);  //this is the good stuff
+}
+
 // DISPLAY WEATHER TO UI
 function displayWeather(){
     iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
