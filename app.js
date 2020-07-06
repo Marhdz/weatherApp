@@ -24,6 +24,7 @@ if(navigator.geolocation && navigator.geolocation.coords!= undefined){
 return new Promise(function (setPosition, showError) {
   navigator.geolocation.getCurrentPosition(setPosition, showError);
 });
+    }
 }else{
     notificationElement.style.display = "block";
     notificationElement.innerHTML = "<p>Se está usando la ubicación por defecto</p>";
